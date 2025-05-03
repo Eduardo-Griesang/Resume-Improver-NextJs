@@ -6,10 +6,10 @@ import ResumeUploader from "./Components/ResumeUploader";
 export default function Home() {
   //https://matsu-theme.vercel.app
   return (
-    <body className="mx-20">
+    <section className="mx-20">
       <Header />
       <About />
       <ResumeUploader />
-    </body>
+    </section>
   );
 }
