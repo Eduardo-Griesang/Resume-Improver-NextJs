@@ -27,13 +27,17 @@ export default function ResumeUploader() {
       <h2 className="font-bold text-secondary-foreground text-2xl">Upload Resume and Compare with Job description</h2>
 
       <section className="flex gap-4 my-10 align-middle">
-        <input type="file" accept="application/pdf" onChange={(e) => setFile(e.target.files?.[0] || null)} />
+        <div>
+          <label htmlFor="pdfFile" className="bg-chart-2 p-3 rounded-sm text-chart-4">Upload your resume here</label>
+          <input id="pdfFile" type="file" accept="application/pdf" placeholder="info" className="hidden" onChange={(e) => setFile(e.target.files?.[0] || null)} />
+        </div>
         <textarea
           placeholder="Paste job description here"
+          className=""
           value={jobDescription}
           onChange={(e) => setJobDescription(e.target.value)}
         />
-        <button onClick={handleOptimize}>Optimize Resume</button>
+        <button onClick={handleOptimize} className="bg-chart-2 p-3 rounded-sm text-chart-4">Optimize Resume</button>
 
         {optimizedResume && (
           <div>
